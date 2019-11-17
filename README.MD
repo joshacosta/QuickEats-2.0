@@ -1,7 +1,7 @@
 ## Step 1 ##
 run `npm install`
 
-##Step 2##
+## Step 2 ##
 
 Unfortunately, I believe I have some old configurations on my laptop that cause this issue. This is a shitty solution but its a solution for now, sorry! I will be working this week to solve it so y'all will be able to simply run npm install and it work already. 
 
