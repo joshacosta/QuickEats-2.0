@@ -1,0 +1,7 @@
+{
+  "name": "QuickEatsTemp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
