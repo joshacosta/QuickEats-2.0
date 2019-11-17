@@ -1,0 +1,84 @@
+{
+    "locations" : [
+        {
+            "name": "Blue Sky",
+            "rating": "4.4",
+            "address": "3216 4th St, Lubbock, TX 79415",
+            "type": ["American", "Burgers"],
+            "price": "$$$",
+            "imgURL": "http://www.blueskytexas.com/4th.jpg"
+        },
+        {
+            "name": "Chipotle",
+            "rating": "4.4",
+            "address": "2411 Glenna Goodacre Blvd, Lubbock, TX 79401",
+            "type": ["Mexican Grill"],
+            "price": "$$",
+            "imgURL": "https://fastly.4sqi.net/img/general/600x600/66898335_5isfU_CQ9R3YW9ieXc7cOVFl28fYdnn_7Ac1z89abz8.jpg"
+        },
+        {
+            "name": "Thai Pepper",
+            "rating": "4.5",
+            "address": "3702 20th St, Lubbock, TX 79410",
+            "type": ["Thai", "Asian"],
+            "price": "$$",
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipP-jUMmDnc8kFCUMrB4pNd83aW6a0gkHZwWCITz=w600-h321-p-k-no"
+        },
+        {
+            "name": "Chick-fil-A",
+            "rating": "4.6",
+            "address": "312 University Ave, Lubbock, TX 79415",
+            "type": ["Chicken", "American"],
+            "price": "$",
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipPdI8_GlFE8t348WFYqNveMBgqLppSdEbrgL51y=w750-h401-p-k-no"
+        },
+        {
+            "name": "Vitality Bowls",
+            "rating": "4.1",
+            "address": "2400 Glenna Goodacre Blvd Suite 106–D, Lubbock, TX 79401",
+            "type": ["Health"],
+            "price": "$$$",
+            "imgURL": "https://i.imgur.com/K2Qrp0g.png"
+        },
+        {
+            "name": "Potbelly",
+            "rating": "4.5",
+            "address": "2402 9th St, Lubbock, TX 79401",
+            "type": ["Deli","Sandwiches"],
+            "price": "$",
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipMadXV033y9Q7VM-8WvPglT5mwZIwarQrhiaQs=w750-h348-p-k-no"
+        },
+        {
+            "name": "Spanky's",
+            "rating": "4.3",
+            "address": "811 University Ave, Lubbock, TX 79401",
+            "type": ["American", "Burgers"],
+            "price": "$$",
+            "imgURL": "https://i.pinimg.com/originals/63/66/a8/6366a847baa0e88bc433189bf59441cd.jpg"
+        },
+        {
+            "name": "Raising Cane's",
+            "rating": "4.5",
+            "address": "907 University Ave, Lubbock, TX 79401",
+            "type": ["Chicken"],
+            "price": "$",
+            "imgURL": "https://www.raisingcanes.com/sites/default/files/styles/location_images/public/RaisingCanes_C158_TheSandstorm_Exterior_1.jpg?itok=gW19HC6y"
+        },
+        {
+            "name": "One Guy's Pizza",
+            "rating": "4.6",
+            "address": "1101 University Ave Lubbock TX",
+            "type": ["Pizza", "Italian"],
+            "price": "$$",
+            "imgURL": "https://media-cdn.tripadvisor.com/media/photo-s/01/05/2c/cd/front-of-one-guy.jpg"
+        },
+        {
+            "name": "Whataburger",
+            "rating": "4.0",
+            "address": "2412 9th St Lubbock TX 79401",
+            "type": ["American", "Burgers"],
+            "price": "$$",
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipNYRLIyb96dzRd5NzZ7eVgZRxsLxZ7L6k4klyOh=w750-h401-p-k-no"
+        }
+      ]
+}

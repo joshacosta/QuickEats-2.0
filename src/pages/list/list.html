@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color = "nav">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Restaurants</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item ion-item *ngFor="let location of this.locationsData" (click)="goToDetails(location)">
+      <ion-thumbnail item-left>
+        <ion-img src='{{location.imgURL}}'></ion-img>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{location.name}}</h3>
+        <p><ion-icon name="star" style="color:gold"></ion-icon> {{location.rating}}</p>
+        <p style="color:green">{{location.price}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
