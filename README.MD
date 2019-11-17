@@ -7,3 +7,8 @@ Unfortunately, I believe I have some old configurations on my laptop that cause 
 
 Reference the solution from this post on stack overflow, let me know if you need any help or questions. 
 https://stackoverflow.com/questions/56826692/export-document-was-not-found-in-angular-platform-browser
+
+## Step 3 ##
+run `ionic serve` 
+or
+run `ionic serve --devapp` if you'd like to run the app on your phone
