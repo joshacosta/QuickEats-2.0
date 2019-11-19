@@ -1,0 +1,64 @@
+{
+    "types" : [
+        {
+            "id": "Asian",
+            "fav": false
+        },
+        {
+            "id": "Breakfast",
+            "fav": false
+        },
+        {
+            "id": "Burgers",
+            "fav": false
+        },
+        {
+            "id": "Chicken",
+            "fav": false
+        },
+        {
+            "id": "Coffee",
+            "fav": false
+        },
+        {
+            "id": "Donuts",
+            "fav": false
+        },
+        {
+            "id": "Frozen Yogurt",
+            "fav": false
+        },
+        {
+            "id": "Grill",
+            "fav": false
+        },
+        {
+            "id": "Health Food",
+            "fav": false
+        },
+        {
+            "id": "Italian",
+            "fav": false
+        },
+        {
+            "id": "Mexican",
+            "fav": false
+        },
+        {
+            "id": "Pizza",
+            "fav": false
+        },
+        {
+            "id": "Salads",
+            "fav": false
+        },
+        {
+            "id": "Sandwiches",
+            "fav": false
+        },
+        {
+            "id": "Various",
+            "fav": false
+        }        
+      ]
+}

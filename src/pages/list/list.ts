@@ -17,6 +17,7 @@ export class ListPage {
   locationsData: any[];
   locationsTest: any[];
 
+
   constructor(public navCtrl: NavController, public navParams: NavParams,private authService: AuthenticationProvider) {
     this.locationsData = data.locations;
 

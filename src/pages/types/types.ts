@@ -2,38 +2,57 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, MenuController } from 'ionic-angular';
 import * as firebase from 'firebase/app';
 import { AngularFirestore } from 'angularfire2/firestore';
+import data from "../../assets/data/types.json"
+import favdata from "../../assets/data/favorites.json"
+import { AuthenticationProvider } from '../../providers/authentication/authentication';
+import { LoginPage } from '../login/login';
+import { RouletteDetailsPage } from '../roulette-details/roulette-details';
 
-/**
- * Generated class for the TypesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
-@IonicPage()
 @Component({
   selector: 'page-types',
   templateUrl: 'types.html',
 })
 export class TypesPage {
-  private callback: Function;
-  private typeSet = new Set();
+  typesData: any[];
+  favoritesData: any[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController,public fireStore:AngularFirestore) {
-    this.callback = navParams.get('callback'); 
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public menuCtrl: MenuController,public fireStore:AngularFirestore, private authService: AuthenticationProvider) {
+   this.typesData = data.types;
+   this.favoritesData = favdata.favorites;
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TypesPage');
+  delete(type){
+    for(var i = 0; i < data.types.length; i++) {
+      if(data.types[i] == type){
+        data.types.splice(i, 1);
+      }
+    }
   }
 
-  returnData(): void {
-    this.callback('some data');
-    this.navCtrl.pop();
-  }  
+  favorite(type){
+    favdata.favorites.push(type);
+  }
 
-  ionViewDidEnter() { this.menuCtrl.enable(false, 'myMenu'); }
+  unfavorite(type){
+    //data.types.push(type.id.toString());
+    for(var i = 0; i < favdata.favorites.length; i++) {
+      if(favdata.favorites[i] == type){
+        favdata.favorites.splice(i, 1);
+      }
+    }
+  }
 
-  ionViewWillLeave() { this.menuCtrl.enable(true, 'myMenu'); }
+  logout(){
+    this.authService.logoutUser()
+    .then(res => {
+      console.log(res);
+      this.navCtrl.pop();
+      this.navCtrl.setRoot(LoginPage);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+  }
 
 }
