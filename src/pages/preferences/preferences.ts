@@ -24,37 +24,22 @@ import { AngularFirestore } from 'angularfire2/firestore';
 export class PreferencesPage {
   private resolve: Function;
   price: any;
+  preferencesCollection: any;
+  public userDoc: any;
+  types: string[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public fireStore: AngularFirestore) {
+    this.preferencesCollection = fireStore.collection<any>("users/" + firebase.auth().currentUser.uid + "/preferences");
+    this.userDoc = this.fireStore.collection("users/"+ firebase.auth().currentUser.uid +"/history");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreferencesPage');
   }
 
-  goToTypesPage(){
-    this.navCtrl.push(TypesPage, {
-      callback: this.setTypeData
-    });
-  }
+  goToTypesPage(){ this.navCtrl.push(TypesPage); }
 
-  setTypeData(data){
+  goToFavoritesPage(){ this.navCtrl.push(FavoritesPage); }
 
-  }
-
-  goToFavoritesPage(){
-
-  }
-
-  setFavoritesData(){
-
-  }
-
-  goToBlacklistPage(){
-
-  }
-
-  setBlacklistData(){
-
-  }
+  goToBlacklistPage(){this.navCtrl.push(BlacklistPage); }
 }

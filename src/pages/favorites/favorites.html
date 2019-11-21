@@ -5,11 +5,36 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>favorites</ion-title>
+  <ion-navbar color = "nav">
+    <ion-title>Favorites</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let location of this.restaurantData" #slidingItem>
+      <ion-item ion-item >
+          <ion-label *ngIf="!isFavorite(location.name)">
+            <h3>{{location.name}}</h3>
+          </ion-label>
 
+          <ion-label *ngIf="isFavorite(location.name)">
+            <h3><ion-icon name="star" style="color:gold"></ion-icon> {{location.name}}</h3>
+          </ion-label>
+        </ion-item>
+
+        <ion-item-options>
+          <button *ngIf = "!isFavorite(location.name)" style="background-color:gold; color:black" (click)="favorite(location.name); share(slidingItem)">
+              <ion-icon name="md-heart" [class.heart]="heart"></ion-icon>
+              Favourite
+          </button>
+
+          <button *ngIf = "isFavorite(location.name)" style="background-color:white; color:black" (click)="unfavorite(location.name); share(slidingItem)">
+            <ion-icon name="md-heart" [class.heart]="heart"></ion-icon>
+            Unfavorite
+          </button>
+        </ion-item-options>
+
+      </ion-item-sliding>
+  </ion-list> 
 </ion-content>

@@ -15,51 +15,29 @@
 
 <ion-content>
     <ion-list>
-      <ion-item-sliding *ngFor="let type of this.typesData">
+      <ion-item-sliding *ngFor="let type of this.types" #slidingItem>
         <ion-item ion-item >
-            <ion-label>
+            <ion-label *ngIf="!isFavorite(type.id)">
               <h3>{{type.id.toString()}}</h3>
+            </ion-label>
+
+            <ion-label *ngIf="isFavorite(type.id)">
+              <h3><ion-icon name="star" style="color:gold"></ion-icon> {{type.id.toString()}}</h3>
             </ion-label>
           </ion-item>
   
           <ion-item-options>
-            <button style="background-color:white; color:black" (click)="favorite(type)">
+            <button *ngIf = "!isFavorite(type.id)" style="background-color:gold; color:black" (click)="favorite(type); share(slidingItem)">
                 <ion-icon name="md-heart" [class.heart]="heart"></ion-icon>
                 Favourite
             </button>
-            <button style="background-color:red; color:white" (click)="delete(type)">
-                <ion-icon name="md-trash" [class.trash]="trash"></ion-icon>
-              Delete
+
+            <button *ngIf = "isFavorite(type.id)" style="background-color:white; color:black" (click)="unfavorite(type); share(slidingItem)">
+              <ion-icon name="md-heart" [class.heart]="heart"></ion-icon>
+              Unfavorite
             </button>
           </ion-item-options>
   
         </ion-item-sliding>
     </ion-list> 
-    
-    <ion-navbar color="nav"  style="text-align: center;">Favorites</ion-navbar>
-    
-    <ion-list>
-        <ion-item-sliding *ngFor="let favorite of this.favoritesData">
-          <ion-item ion-item >
-              <ion-label>
-                <h3>{{favorite.id.toString()}}</h3>
-              </ion-label>
-            </ion-item>
-    
-            <ion-item-options>
-              <button style="background-color:white; color:black" (click)="unfavorite(favorite)">
-                  <ion-icon name="md-heart-outline" [class.heart-outline]="heart-outline"></ion-icon>
-                  Unfavourite
-              </button>
-            </ion-item-options>
-    
-          </ion-item-sliding>
-      
-      </ion-list>  
-      
-
-
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title}}</b>
-    </div>
   </ion-content>
