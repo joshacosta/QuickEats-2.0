@@ -1,4 +1,4 @@
-(these steps should be followed assuming the user has already globally installed ionic and node.js)
+(these steps should only be followed assuming the user has already globally installed ionic and node.js)
 
 ## Step 1 ##
 run `npm install`
