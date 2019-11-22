@@ -2,83 +2,103 @@
     "locations" : [
         {
             "name": "Blue Sky",
-            "rating": "4.4",
+            "rating": 4.4,
             "address": "3216 4th St, Lubbock, TX 79415",
-            "type": ["American", "Burgers"],
-            "price": "$$$",
-            "imgURL": "http://www.blueskytexas.com/4th.jpg"
+            "type": "Burgers",
+            "price": 3,
+            "imgURL": "http://www.blueskytexas.com/4th.jpg",
+            "weight": 100,
+            "menuURL": "http://www.blueskytexas.com/lbk.pdf"
         },
         {
             "name": "Chipotle",
-            "rating": "4.4",
+            "rating": 4.4,
             "address": "2411 Glenna Goodacre Blvd, Lubbock, TX 79401",
-            "type": ["Mexican Grill"],
-            "price": "$$",
-            "imgURL": "https://fastly.4sqi.net/img/general/600x600/66898335_5isfU_CQ9R3YW9ieXc7cOVFl28fYdnn_7Ac1z89abz8.jpg"
+            "type": "Mexican",
+            "price": 2,
+            "imgURL": "https://fastly.4sqi.net/img/general/600x600/66898335_5isfU_CQ9R3YW9ieXc7cOVFl28fYdnn_7Ac1z89abz8.jpg",
+            "weight": 100,
+            "menuURL": "https://www.menuwithprice.com/menu/chipotle-mexican-grill/"
         },
         {
             "name": "Thai Pepper",
-            "rating": "4.5",
+            "rating": 4.5,
             "address": "3702 20th St, Lubbock, TX 79410",
-            "type": ["Thai", "Asian"],
-            "price": "$$",
-            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipP-jUMmDnc8kFCUMrB4pNd83aW6a0gkHZwWCITz=w600-h321-p-k-no"
+            "type": "Asian",
+            "price": 2,
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipP-jUMmDnc8kFCUMrB4pNd83aW6a0gkHZwWCITz=w600-h321-p-k-no",
+            "weight": 100,
+            "menuURL": "http://lubbockmenu.com/thai-pepper-restaurant-menu/"
         },
         {
             "name": "Chick-fil-A",
-            "rating": "4.6",
+            "rating": 4.6,
             "address": "312 University Ave, Lubbock, TX 79415",
-            "type": ["Chicken", "American"],
-            "price": "$",
-            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipPdI8_GlFE8t348WFYqNveMBgqLppSdEbrgL51y=w750-h401-p-k-no"
+            "type": "Chicken",
+            "price": 1,
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipPdI8_GlFE8t348WFYqNveMBgqLppSdEbrgL51y=w750-h401-p-k-no",
+            "weight": 100,
+            "menuURL": "https://cfalubbock.com/menu/"
         },
         {
             "name": "Vitality Bowls",
-            "rating": "4.1",
+            "rating": 4.1,
             "address": "2400 Glenna Goodacre Blvd Suite 106–D, Lubbock, TX 79401",
-            "type": ["Health"],
-            "price": "$$$",
-            "imgURL": "https://i.imgur.com/K2Qrp0g.png"
+            "type": "Health Food",
+            "price": 3,
+            "imgURL": "https://i.imgur.com/K2Qrp0g.png",
+            "weight": 100,
+            "menuURL": "https://vitalitybowls.com/menu/"
         },
         {
             "name": "Potbelly",
-            "rating": "4.5",
+            "rating": 4.5,
             "address": "2402 9th St, Lubbock, TX 79401",
-            "type": ["Deli","Sandwiches"],
-            "price": "$",
-            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipMadXV033y9Q7VM-8WvPglT5mwZIwarQrhiaQs=w750-h348-p-k-no"
+            "type": "Sandwiches",
+            "price": 1,
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipMadXV033y9Q7VM-8WvPglT5mwZIwarQrhiaQs=w750-h348-p-k-no",
+            "weight": 100,
+            "menuURL": "https://www.potbelly.com/menu/Sandwiches"
         },
         {
             "name": "Spanky's",
-            "rating": "4.3",
+            "rating": 4.3,
             "address": "811 University Ave, Lubbock, TX 79401",
-            "type": ["American", "Burgers"],
-            "price": "$$",
-            "imgURL": "https://i.pinimg.com/originals/63/66/a8/6366a847baa0e88bc433189bf59441cd.jpg"
+            "type": "Burgers",
+            "price": 2,
+            "imgURL": "https://i.pinimg.com/originals/63/66/a8/6366a847baa0e88bc433189bf59441cd.jpg",
+            "weight": 100,
+            "menuURL": "https://spankys.com/index.php?option=com_content&view=article&id=47:oldstyle-burgers&catid=34:oldstyle-burgers&Itemid=55"
         },
         {
             "name": "Raising Cane's",
-            "rating": "4.5",
+            "rating": 4.5,
             "address": "907 University Ave, Lubbock, TX 79401",
-            "type": ["Chicken"],
-            "price": "$",
-            "imgURL": "https://www.raisingcanes.com/sites/default/files/styles/location_images/public/RaisingCanes_C158_TheSandstorm_Exterior_1.jpg?itok=gW19HC6y"
+            "type": "Chicken",
+            "price": 1,
+            "imgURL": "https://www.raisingcanes.com/sites/default/files/styles/location_images/public/RaisingCanes_C158_TheSandstorm_Exterior_1.jpg?itok=gW19HC6y",
+            "weight": 100,
+            "menuURL": "https://www.raisingcanes.com/our-menu"
         },
         {
             "name": "One Guy's Pizza",
-            "rating": "4.6",
+            "rating": 4.6,
             "address": "1101 University Ave Lubbock TX",
-            "type": ["Pizza", "Italian"],
-            "price": "$$",
-            "imgURL": "https://media-cdn.tripadvisor.com/media/photo-s/01/05/2c/cd/front-of-one-guy.jpg"
+            "type": "Italian",
+            "price": 2,
+            "imgURL": "https://media-cdn.tripadvisor.com/media/photo-s/01/05/2c/cd/front-of-one-guy.jpg",
+            "weight": 100,
+            "menuURL": "http://places.singleplatform.com/one-guy-from-italy-pizza/menu"
         },
         {
             "name": "Whataburger",
-            "rating": "4.0",
+            "rating": 4.0,
             "address": "2412 9th St Lubbock TX 79401",
-            "type": ["American", "Burgers"],
-            "price": "$$",
-            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipNYRLIyb96dzRd5NzZ7eVgZRxsLxZ7L6k4klyOh=w750-h401-p-k-no"
+            "type":  "Burgers",
+            "price": 2,
+            "imgURL": "https://lh5.googleusercontent.com/p/AF1QipNYRLIyb96dzRd5NzZ7eVgZRxsLxZ7L6k4klyOh=w750-h401-p-k-no",
+            "weight": 100,
+            "menuURL": "https://whataburger.com/locations/940/menu"
         }
       ]
 }

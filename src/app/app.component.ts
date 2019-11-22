@@ -9,6 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { ProfilePage } from '../pages/profile/profile';
 import { HistoryPage } from "../pages/history/history"
 import { PreferencesPage } from "../pages/preferences/preferences"
+import { QuickEatsPage } from "../pages/quick-eats/quick-eats"
 
 import * as firebase from 'firebase';
 
@@ -38,8 +39,8 @@ export class MyApp {
     this.pages = [
       { title: 'Restaurants', component: ListPage, icon: "pizza" },
       { title: 'Roulette', component: RoulettePage, icon:"aperture"},
+      { title: 'Quick Eats', component: QuickEatsPage, icon: "restaurant"},
       { title: 'History', component: HistoryPage, icon: "time"},
-      { title: 'Quick Eats', component: HistoryPage, icon: "restaurant"},
       { title: 'Preferences', component: PreferencesPage, icon: "heart"}
     ]
   }

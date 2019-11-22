@@ -13,7 +13,7 @@
 <ion-content>
   <ion-list>
     <ion-item-sliding *ngFor="let location of this.restaurantData" #slidingItem>
-      <ion-item ion-item >
+      <ion-item ion-item *ngIf="!isBlacklist(location.name)">
           <ion-label *ngIf="!isFavorite(location.name)">
             <h3>{{location.name}}</h3>
           </ion-label>

@@ -22,19 +22,37 @@ import { AngularFirestore } from 'angularfire2/firestore';
   templateUrl: 'preferences.html',
 })
 export class PreferencesPage {
-  private resolve: Function;
-  price: any;
+  price: number;
+  rating: number;
+
   preferencesCollection: any;
-  public userDoc: any;
-  types: string[];
+  userDoc: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public fireStore: AngularFirestore) {
-    this.preferencesCollection = fireStore.collection<any>("users/" + firebase.auth().currentUser.uid + "/preferences");
+    this.preferencesCollection = fireStore.firestore.collection("users/" + firebase.auth().currentUser.uid + "/preferences");
     this.userDoc = this.fireStore.collection("users/"+ firebase.auth().currentUser.uid +"/history");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PreferencesPage');
+    this.preferencesCollection.doc("userPreferences").get().then( (snap) => {
+      this.price = snap.data().price;
+      this.rating = snap.data().rating;
+    })
+  }
+
+  ionViewDidLeave(){
+    this.preferencesCollection.doc("userPreferences").get().then( (snap) => {
+      this.preferencesCollection.doc("userPreferences").set({
+        rating: this.rating,
+        price: this.price,
+        types: snap.data().types,
+        favorites: snap.data().favorites,
+        blacklist: snap.data().blacklist
+      }).then(function(){
+        console.log("successful set");
+      })
+  })
   }
 
   goToTypesPage(){ this.navCtrl.push(TypesPage); }

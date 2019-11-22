@@ -11,7 +11,6 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Injectable()
 export class AuthenticationProvider {
   userCollection : any;
-
   constructor(private fireStore: AngularFirestore){
     this.userCollection = fireStore.collection<any>('users');
   }
@@ -25,6 +24,14 @@ export class AuthenticationProvider {
           uid: val.user.uid,
           email: val.user.email
         });
+
+        this.userCollection.doc(val.user.uid).collection("preferences").doc("userPreferences").set({
+          rating: 1,
+          price: 1,
+          types: [],
+          favorites: [],
+          blacklist: []
+        })
       }
       ,
        err => reject(err))

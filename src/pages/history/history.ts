@@ -34,6 +34,7 @@ export class HistoryPage {
           name: doc.data().name
         });
       })
+      this.historyData.reverse();
     } )
 
     

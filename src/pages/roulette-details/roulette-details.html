@@ -17,9 +17,11 @@
           <ion-card-title>
             {{this.locationsData.name}}
           </ion-card-title>
-          <p>{{this.tags}}</p>
-          <p style="color:green">{{this.locationsData.price}}</p>
+          <p>{{this.locationsData.type}}</p>
           <p><ion-icon name="star" style="color:gold"></ion-icon> {{this.locationsData.rating}}</p>
+          <p style="color:green" *ngIf="this.locationsData.price==3">&#36;&#36;&#36;</p>
+          <p style="color:green" *ngIf="this.locationsData.price==2">&#36;&#36;</p>
+          <p style="color:green" *ngIf="this.locationsData.price==1">&#36;</p>
         </ion-card-content>
       </ion-card>
       <br>

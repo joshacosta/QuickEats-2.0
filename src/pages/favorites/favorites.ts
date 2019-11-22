@@ -7,7 +7,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 import data from "../../assets/data/locations.json"
 import { restaurant } from '../../models/restaurant.js';
 import favdata from "../../assets/data/favorites.json"
-
+import blackdata from "../../assets/data/blacklist.json"
 /**
  * Generated class for the FavoritesPage page.
  *
@@ -24,18 +24,24 @@ export class FavoritesPage {
   public restaurantData: any;
   public preferencesCollection: any;
   favoritesData: any[];
+  blacklistData: any[];
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public fireStore:AngularFirestore) {
     this.restaurantData = data.locations;
-    favdata.favorites = []
+    favdata.favorites = [];
+    blackdata.blacklist = [];
     this.preferencesCollection = fireStore.firestore.collection("users/" + firebase.auth().currentUser.uid + "/preferences");
   }
 
   ionViewWillEnter() {
     this.preferencesCollection.doc("userPreferences").get().then( (snap) => {
       this.favoritesData = snap.data().favorites
+      this.blacklistData = snap.data().blacklist
       this.favoritesData.forEach(function(location){
         favdata.favorites.push(location);
+      })
+      this.blacklistData.forEach(function(location){
+        blackdata.blacklist.push(location);
       })
     })
   }
@@ -57,6 +63,8 @@ export class FavoritesPage {
   isFavorite(location){ return favdata.favorites.includes(location); }
 
   favorite(location){ favdata.favorites.push(location); }
+
+  isBlacklist(location) {return blackdata.blacklist.includes(location); }
 
   unfavorite(location){
     for(var i = 0; i < favdata.favorites.length ; i++) {

@@ -10,18 +10,21 @@
 
 <ion-content>
   <ion-list>
-    <ion-item ion-item *ngFor="let location of this.locationsData" (click)="goToDetails(location)">
-      <ion-thumbnail item-left>
-        <ion-img src='{{location.imgURL}}'></ion-img>
-      </ion-thumbnail>
-      <ion-label>
-        <h3>{{location.name}}</h3>
-        <p><ion-icon name="star" style="color:gold"></ion-icon> {{location.rating}}</p>
-        <p style="color:green">{{location.price}}</p>
-      </ion-label>
-    </ion-item>
+    <div *ngFor="let location of this.locationsData">
+      <ion-item ion-item *ngIf="!isBlacklist(location.name)"  (click)="goToDetails(location)">
+          <ion-thumbnail item-left>
+            <ion-img src='{{location.imgURL}}'></ion-img>
+          </ion-thumbnail>
+          <ion-label>
+            <h3>{{location.name}}</h3>
+            <p><ion-icon name="star" style="color:gold"></ion-icon> {{location.rating}}</p>
+            <p style="color:green" *ngIf="location.price==3">&#36;&#36;&#36;</p>
+            <p style="color:green" *ngIf="location.price==2">&#36;&#36;</p>
+            <p style="color:green" *ngIf="location.price==1">&#36;</p>
+          </ion-label>
+        </ion-item>
+    </div>
+    
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+
 </ion-content>

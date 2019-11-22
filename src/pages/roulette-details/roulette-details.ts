@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams , MenuController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams , MenuController, ToastController} from 'ionic-angular';
 
 import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
 import { AngularFirestore } from 'angularfire2/firestore';
@@ -30,11 +30,11 @@ export class RouletteDetailsPage {
     private launchNavigator: LaunchNavigator, 
     public fireStore: AngularFirestore,
     public auth: AuthenticationProvider,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    public toastController: ToastController
     ) 
   {    
     this.locationsData = navParams.get('locations');
-    this.tags = this.locationsData.type.join(", ");
     this.userDoc = this.fireStore.collection("users/"+ firebase.auth().currentUser.uid +"/history");
   }
 
@@ -67,15 +67,26 @@ export class RouletteDetailsPage {
 
   addToHistory(){
     this.date = new Date() + "";
+    var time = new Date().getTime()
+    var timeString = time.toString();
 
-    this.userDoc.add({
+    this.userDoc.doc(timeString).set({
       name: this.locationsData.name,
       date: this.date.substring(0,24)
     });
+
+    const toast = this.toastController.create({
+      message: 'Added restaurant to your history!',
+      duration: 2000
+    });
+    toast.present();
+
+    this.navCtrl.pop();
   }
 
   openMenu(){
-    window.open("https://www.potbelly.com/menu/Sandwiches","_system");
+    console.log(this.locationsData.menuURL)
+    window.open(this.locationsData.menuURL,"_system");
   }
 
 }

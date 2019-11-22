@@ -14,6 +14,7 @@ import { PreferencesPage } from "../pages/preferences/preferences"
 import { TypesPage } from "../pages/types/types"
 import { FavoritesPage } from "../pages/favorites/favorites"
 import { BlacklistPage } from "../pages/blacklist/blacklist"
+import { QuickEatsPage } from "../pages/quick-eats/quick-eats"
 
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -51,7 +52,8 @@ firebase.initializeApp({
     PreferencesPage,
     TypesPage,
     FavoritesPage,
-    BlacklistPage
+    BlacklistPage,
+    QuickEatsPage
   ],
   imports: [
     BrowserModule,
@@ -82,7 +84,8 @@ firebase.initializeApp({
     PreferencesPage,
     TypesPage,
     FavoritesPage,
-    BlacklistPage
+    BlacklistPage,
+    QuickEatsPage
   ],
   providers: [
     LaunchNavigator,
